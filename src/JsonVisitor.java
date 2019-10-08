@@ -20,6 +20,7 @@ public class JsonVisitor implements Visitor {
     }
 
     public String getJson() {
+        System.out.print(result);
         return result;
     }
 }

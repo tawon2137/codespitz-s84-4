@@ -20,9 +20,23 @@ public class CommandTask {
 
     // TODO homework
     public void load(String key) {
+        
         String json = saved.get(key);
+        clear();
+        JsonVisitor visitor = new JsonVisitor();
+        // visitor.parse();
+        Renderer renderer = new Renderer(()-> visitor);
         // subTask 삭제
         // json 순회하면서 복원
+    }
+
+    public void clear() {
+        task.removeTask(task);
+        for(int i = commands.size() - 1; i >= 0;i--) {
+            commands.remove(i);
+        }
+        System.out.println("");
+        System.out.println("commands 삭제됬는가 ? : " + commands.size());
     }
 
     public void redo() {
